@@ -29,6 +29,7 @@ function updateInput(e) {
     const char = idValues[e.target.id]
 
     handleDigits(char) 
+    handleDot(char)
     handleOperators(char)
     handleReset(char)
     handleUndo(char)
@@ -42,6 +43,22 @@ function handleDigits(char) {
 
     const input = document.querySelector("#input")
     input.textContent += char
+}
+
+function handleDot(char) {
+    if (char != ".") return 
+
+    const input = document.querySelector("#input")
+    const formula = input.textContent
+    const numbers = formula.split( /[*\/+-]/ )
+
+    let lastNumber = numbers[numbers.length - 1]
+
+    // if number already has a dot, we cant put another
+    if (lastNumber.includes(".")) return
+
+    // add dot
+    input.textContent += "."
 }
 
 function handleOperators(char) {
