@@ -31,6 +31,7 @@ function updateInput(e) {
     handleDigits(char) 
     handleOperators(char)
     handleReset(char)
+    handleUndo(char)
     handleEqual(char)
     console.log("update!")
 }
@@ -65,6 +66,13 @@ function handleReset(char) {
     output.textContent = ""
 }
 
+function handleUndo(char) {
+    if (char != "C") return 
+
+    const input = document.querySelector("#input")
+    input.textContent = input.textContent.slice(0, -1)
+}
+
 function handleEqual(char) {
     if (char !== "=") return 
 
@@ -80,6 +88,7 @@ function handleEqual(char) {
     operators = operators.filter(item => item !== "")
 
     // solving using PAPOMUDAS
+    // multiplication and division
     while (operators.includes("*") || operators.includes("/")) {
         // get operator index
         const i = operators.findIndex(item => item == "*" || item == "/")
@@ -89,6 +98,24 @@ function handleEqual(char) {
             result = numbers[i] * numbers[i+1]
         } else if (operators[i] == "/") {
             result = numbers[i] / numbers[i+1]
+        }
+
+        // update arrays
+        numbers.splice(i, 1)
+        numbers[i] = result 
+        operators.splice(i, 1)
+    }
+
+    // adition and substraction
+    while (operators.includes("+") || operators.includes("-")) {
+        // get operator index
+        const i = operators.findIndex(item => item == "+" || item == "-")
+        let result
+
+        if (operators[i] == "+") {
+            result = numbers[i] + numbers[i+1]
+        } else if (operators[i] == "-") {
+            result = numbers[i] - numbers[i+1]
         }
 
         // update arrays
