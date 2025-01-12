@@ -25,13 +25,14 @@ p {
 }
 
 .screen {
-    height: 100px;
+    height: 80px;
     background: #f3edec;
     border-radius: 8px;
     margin: 8px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: end;
 }
 
