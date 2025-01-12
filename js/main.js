@@ -1,6 +1,8 @@
 
 function updateInput(e) {
     const input = document.querySelector('#input');
+    const output = document.querySelector("#output")
+
     let text = ""
     switch (e.target.id) {
         case "b0": text = "0"; break
@@ -25,6 +27,7 @@ function updateInput(e) {
         case "reset": clearInput(); break
     }
     input.textContent += text
+    output.textContent += text
 }
 
 function clearInput() {

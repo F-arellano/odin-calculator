@@ -2,8 +2,6 @@ html {
     height: 100%;
 }
 
-
-
 body {
     height: 100%;
     font-family: 'Courier New', Courier, monospace;
@@ -11,6 +9,12 @@ body {
     justify-content: center;
     align-items: center;
     background: #4a4241;
+}
+
+p {
+    font-size: 32px;
+    font-weight: 200;
+    margin: 0px 15px;
 }
 
 .container {
@@ -25,10 +29,10 @@ body {
     background: #f3edec;
     border-radius: 8px;
     margin: 8px;
-}
-
-.input {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: end;
 }
 
 .box {
