@@ -22,15 +22,17 @@ function updateInput(e) {
         case "minus": text = "-"; break
         case "dot": text = "."; break
         case "equal": text = "="; break
-        case "reset": text = ""; break
+        case "reset": clearInput(); break
     }
     input.textContent += text
 }
 
+function clearInput() {
+    const input = document.querySelector("#input")
+    const output = document.querySelector("#output")
+    input.textContent = ""
+    output.textContent = ""
+}
+
 const container = document.querySelector(".container")
 container.addEventListener("click", updateInput)
-
-// for (let i=0; i < buttons.length; i++) {
-//     const button = buttons[i]
-//     button.addEventListener("click", updateInput)
-// }
