@@ -15,6 +15,7 @@ p {
     font-size: 32px;
     font-weight: 200;
     margin: 0px 15px;
+    padding-left: 10px;
 }
 
 .container {
@@ -26,6 +27,7 @@ p {
 
 .screen {
     height: 80px;
+    width: 350px;
     background: #f3edec;
     border-radius: 8px;
     margin: 8px;

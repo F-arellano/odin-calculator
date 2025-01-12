@@ -124,7 +124,13 @@ function handleEqual(char) {
         operators.splice(i, 1)
     }
 
-    output.textContent = numbers[0]
+    let finalResult = numbers[0].toString()
+
+    if (finalResult.length > 16) {
+        finalResult = finalResult.slice(0, 16)
+    }
+
+    output.textContent = finalResult
 }
 
 function isOperator(char) {
